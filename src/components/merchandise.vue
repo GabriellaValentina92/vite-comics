@@ -42,21 +42,19 @@
 </template>
 
 <style lang="scss" scoped>
+@use "../style/partials/variables" as *;
 ul {
   background-color: rgb(7, 127, 246);
 }
 
 .shopOnline {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include merch-display-flex;
   min-height: 100px;
   .links {
     display: flex;
     list-style: none;
   }
 }
-
 .links li img {
   width: 30px;
   margin-right: 0.8rem;
