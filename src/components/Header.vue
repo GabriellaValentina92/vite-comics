@@ -6,9 +6,8 @@
       <img src="../../img/dc-logo.png" alt="" />
     </li>
     <ul class="nav-menu">
-      <li>CHARACTER</li>
+      <li>CHARACTERS</li>
       <li>COMICS</li>
-      <li>MOVIES</li>
       <li>TV</li>
       <li>GAMES</li>
       <li>COLLECTIBLES</li>
