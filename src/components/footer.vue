@@ -56,7 +56,6 @@
 
 <style lang="scss" scoped>
 .footer-bg {
-  background-image: url("../../img/footer-bg.jpg");
   display: flex;
 
   .footer-menu {

@@ -1,21 +1,30 @@
-<script></script>
+<script>
+import navBar from "./navBar.vue";
+export default {
+  components: {
+    navBar,
+  },
+
+  data() {
+    return {
+      logoImg: "dc-logo.png",
+    };
+  },
+
+  methods: {
+    getImagePath(img) {
+      return new URL(`../assets/img/${img}`, import.meta.url).href;
+    },
+  },
+};
+</script>
 
 <template>
   <ul class="navbar">
     <li class="logo">
-      <img src="../../img/dc-logo.png" alt="" />
+      <img :src="getImagePath(logoImg)" alt="" />
     </li>
-    <ul class="nav-menu">
-      <li>CHARACTERS</li>
-      <li>COMICS</li>
-      <li>TV</li>
-      <li>GAMES</li>
-      <li>COLLECTIBLES</li>
-      <li>VIDEOS</li>
-      <li>FANS</li>
-      <li>NEWS</li>
-      <li>SHOPS</li>
-    </ul>
+    <navBar />
   </ul>
 </template>
 
@@ -27,17 +36,6 @@ $bg-color: white;
 
   .logo img {
     width: 60px;
-  }
-
-  .nav-menu {
-    display: flex;
-  }
-
-  .nav-menu li {
-    color: black;
-    font-weight: 500;
-    list-style: none;
-    padding: 0.5rem;
   }
 }
 </style>
