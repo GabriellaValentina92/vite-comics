@@ -1,3 +1,7 @@
+//variabili
+$bg-color: black;
+
+//mixin
 @mixin display-flex {
   display: flex;
   align-items: center;
@@ -9,4 +13,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+@mixin container-size {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0.5rem;
 }

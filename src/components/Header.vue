@@ -32,8 +32,12 @@ export default {
 @use "../style/partials/variables" as *;
 $bg-color: white;
 .navbar {
+  @include container-size;
   @include display-flex;
 
+  .logo {
+    list-style: none;
+  }
   .logo img {
     width: 60px;
   }
