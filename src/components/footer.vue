@@ -3,12 +3,6 @@ export default {
   data() {
     return {
       dcLogoBig: "dc-logo-bg.png",
-
-      fooMenu: [
-        {
-          title: "",
-        },
-      ],
     };
   },
 
@@ -44,9 +38,9 @@ export default {
 <style lang="scss" scoped>
 @use "../style/partials/variables" as *;
 .footer-bg {
-  height: 300px;
   @include container-size;
   @include display-flex;
+  height: 300px;
   background-image: url("../assets/img/footer-bg.jpg");
   background-size: cover;
 

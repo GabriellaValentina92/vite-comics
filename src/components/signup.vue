@@ -37,9 +37,7 @@ export default {
 <template>
   <div class="bg-color">
     <div class="container">
-      <div>
-        <button>SIGN-UP NOW!</button>
-      </div>
+      <div class="signUp"><a href="#">SIGN-UP NOW!</a></div>
       <div class="icons">
         <h2>FOLLOW US</h2>
         <img
@@ -63,13 +61,23 @@ export default {
     @include container-size;
     @include display-flex;
 
+    .signUp {
+      border: 2px solid rgb(17, 138, 237);
+      padding: 0.5rem 1rem;
+    }
+
+    .signUp a {
+      text-decoration: none;
+      color: white;
+    }
+
     .icons {
       display: flex;
       align-items: center;
     }
     .icons h2 {
       color: rgb(17, 138, 237);
-      font-size: 1.3rem;
+      font-size: 1rem;
       padding: 0.5rem;
     }
 
