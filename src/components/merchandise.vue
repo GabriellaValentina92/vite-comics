@@ -1,41 +1,52 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      shopsLink: [
+        {
+          image: "buy-comics-digital-comics.png",
+          title: "DIGITAL COMICS",
+        },
+
+        {
+          image: "buy-comics-merchandise.png",
+          title: "DC MERCHANDISE",
+        },
+
+        {
+          image: "buy-comics-subscriptions.png",
+          title: "SUBSCRIPTION",
+        },
+
+        {
+          image: "buy-comics-shop-locator.png",
+          title: "COMIC SHOP LOCATOR",
+        },
+
+        {
+          image: "buy-dc-power-visa.svg",
+          title: "DC POWER VISA",
+        },
+      ],
+    };
+  },
+
+  methods: {
+    getImagePath(img) {
+      return new URL(`../assets/img/${img}`, import.meta.url).href;
+    },
+  },
+};
+</script>
 
 <template>
   <ul>
     <li class="shopOnline">
-      <ul class="links">
+      <ul class="links" v-for="shop in shopsLink" :key="shop.title">
         <li>
-          <img src="../../img/buy-comics-digital-comics.png" alt="" />
+          <img :src="getImagePath(shop.image)" :alt="shop.title" />
         </li>
-        <li>DIGITAL COMICS</li>
-      </ul>
-
-      <ul class="links">
-        <li>
-          <img src="../../img/buy-comics-merchandise.png" alt="" />
-        </li>
-        <li>DC MERCHANDISE</li>
-      </ul>
-
-      <ul class="links">
-        <li>
-          <img src="../../img/buy-comics-subscriptions.png" alt="" />
-        </li>
-        <li>SUBSCRIPTION</li>
-      </ul>
-
-      <ul class="links">
-        <li>
-          <img src="../../img/buy-comics-shop-locator.png" alt="" />
-        </li>
-        <li>COMIC SHOP LOCATOR</li>
-      </ul>
-
-      <ul class="links">
-        <li>
-          <img src="../../img/buy-dc-power-visa.svg" alt="" />
-        </li>
-        <li>DC POWER VISA</li>
+        <li>{{ shop.title }}</li>
       </ul>
     </li>
   </ul>
@@ -48,10 +59,12 @@ ul {
 }
 
 .shopOnline {
+  @include container-size;
   @include merch-display-flex;
   min-height: 100px;
   .links {
     display: flex;
+    align-items: center;
     list-style: none;
   }
 }

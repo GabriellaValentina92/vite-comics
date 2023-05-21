@@ -1,4 +1,24 @@
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+      dcLogoBig: "dc-logo-bg.png",
+
+      fooMenu: [
+        {
+          title: "",
+        },
+      ],
+    };
+  },
+
+  methods: {
+    getImagePath(img) {
+      return new URL(`../assets/img/${img}`, import.meta.url).href;
+    },
+  },
+};
+</script>
 
 <template>
   <ul class="footer-bg">
@@ -13,50 +33,22 @@
         <li>videos</li>
         <li>news</li>
       </ul>
-      <ul>
-        <li>
-          SHOPS
-          <ul>
-            <li>Shop DC</li>
-            <li>Shop DC collectibles</li>
-          </ul>
-        </li>
-      </ul>
     </li>
 
-    <li class="footer-menu">
-      DC
-      <ul>
-        <li>term of use</li>
-        <li>privacy policy</li>
-        <li>Ad choices</li>
-        <li>Advertising</li>
-        <li>Jobs</li>
-        <li>Subscription</li>
-        <li>Workshops</li>
-        <li>CPSC Certificates</li>
-        <li>Ratings</li>
-        <li>Shops help</li>
-        <li>Contact Us</li>
-      </ul>
-    </li>
-
-    <li class="footer-menu">
-      SITES
-      <ul>
-        <li>DC</li>
-        <li>MAD Magazines</li>
-        <li>DC Kids</li>
-        <li>DC Universe</li>
-        <li>DC Power Visa</li>
-      </ul>
+    <li>
+      <img :src="getImagePath(dcLogoBig)" alt="" />
     </li>
   </ul>
 </template>
 
 <style lang="scss" scoped>
+@use "../style/partials/variables" as *;
 .footer-bg {
-  display: flex;
+  height: 300px;
+  @include container-size;
+  @include display-flex;
+  background-image: url("../assets/img/footer-bg.jpg");
+  background-size: cover;
 
   .footer-menu {
     color: black;
