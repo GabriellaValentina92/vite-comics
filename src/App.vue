@@ -2,7 +2,7 @@
 import Header from "./components/Header.vue";
 import mainContent from "./components/mainContent.vue";
 import merchandise from "./components/merchandise.vue";
-import footer from "./components/footer.vue";
+import secFooter from "./components/secFooter.vue";
 import signup from "./components/signup.vue";
 import jumbotron from "./components/jumbotron.vue";
 
@@ -11,7 +11,7 @@ export default {
     Header,
     mainContent,
     merchandise,
-    footer,
+    secFooter,
     signup,
     jumbotron,
   },
@@ -23,7 +23,7 @@ export default {
   <jumbotron></jumbotron>
   <mainContent></mainContent>
   <merchandise></merchandise>
-  <footer></footer>
+  <secFooter></secFooter>
   <signup></signup>
 </template>
 
